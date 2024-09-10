@@ -34,7 +34,7 @@ body {
     justify-content: center;
 }
 
- move {
+keyframes move {
     0% {
         background-position: center top;
     }
