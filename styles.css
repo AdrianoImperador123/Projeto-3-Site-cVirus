@@ -3,7 +3,6 @@
     --cor-fundo: #000000;
     --cor-texto: #ffffff;
     --cor-accent: #ff7700;
-    --cor-bloqueado: #333333;
     --fonte-principal: 'Arial', sans-serif;
 }
 
@@ -17,47 +16,52 @@ body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     font-family: var(--fonte-principal);
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    justify-content: space-between;
 }
 
-header {
-    text-align: center;
-    padding: 2em;
-    background-color: var(--cor-accent);
-    color: var(--cor-fundo);
-}
-
-h1 {
-    font-size: 32px;
-}
-
-p {
-    font-size: 18px;
-}
-
-.container {
-    flex: 1;
-    padding: 20px;
+.fullscreen-image {
+    background-image: url('Captura\ de\ tela\ 2024-09-10\ 161854.png'); /* Substitua 'sua-imagem.jpg' pelo caminho da sua imagem */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    animation: move 10s infinite linear;
     display: flex;
-    flex-direction: column;
-    gap: 30px;
     align-items: center;
+    justify-content: center;
 }
 
-.image-section, .video-section {
-    text-align: center;
-    width: 80%;
+@keyframes move {
+    0% {
+        background-position: center top;
+    }
+    50% {
+        background-position: center bottom;
+    }
+    100% {
+        background-position: center top;
+    }
 }
 
-.blocked-content {
-    background-color: var(--cor-bloqueado);
-    color: var(--cor-accent);
+.blocked-message {
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 20px;
     border: 3px dashed var(--cor-accent);
-    border-radius: 8px;
-    margin-top: 10px;
+    text-align: center;
+    color: var(--cor-texto);
+    border-radius: 10px;
+}
+
+.blocked-message h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.blocked-message p {
+    font-size: 18px;
 }
 
 footer {
@@ -65,7 +69,7 @@ footer {
     padding: 10px;
     text-align: center;
     color: var(--cor-fundo);
-    border-top: 3px solid var(--cor-bloqueado);
+    border-top: 3px solid rgba(0, 0, 0, 0.7);
 }
 
 footer p {
